@@ -1,0 +1,11 @@
+{
+    "root": "build/",
+    "routes": {
+      "/**": "index.html"
+    },
+    "proxies": {
+        "/api/": {
+          "origin": "https://vproker3-test-server.herokuapp.com/api/"
+        }
+    }
+}

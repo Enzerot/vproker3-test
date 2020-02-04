@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <title>Vproker 3</title>
+    <style>
+      body {
+        position: relative;
+        min-height: 100vh;
+        margin: 0;
+      }
+
+      .preloader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: 9999;
+        background-color: black;
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: .3s ease-in-out;
+      }
+      .loaded {
+        opacity: 0;
+      }
+      .loaded-none {
+        display: none;
+      }
+      .wrapper {
+        width: 200px;
+        height: 200px;
+      }
+
+      .wrapper ul {
+        display: grid;
+        list-style-type: none;
+        padding: 0;
+        grid-template-columns: repeat(5, 40px);
+        -webkit-animation: rot 16s linear infinite;
+                animation: rot 16s linear infinite;
+      }
+      @-webkit-keyframes rot {
+        100% {
+          -webkit-transform: rotate(360deg);
+                  transform: rotate(360deg);
+        }
+      }
+      @keyframes rot {
+        100% {
+          -webkit-transform: rotate(360deg);
+                  transform: rotate(360deg);
+        }
+      }
+      .wrapper li {
+        width: 40px;
+        height: 40px;
+        background: #ff8300;
+        border-radius: 4px;
+        box-shadow: 0 0 1px #fff, 0 0 5px #ff8300, 0 0 10px #ff8300, 0 0 15px #ff8300, 0 0 25px #ff8300, 0 0 55px #ff8300;
+        -webkit-animation: scale 0.8s linear alternate infinite;
+                animation: scale 0.8s linear alternate infinite;
+      }
+      @-webkit-keyframes scale {
+        100% {
+          -webkit-transform: scale(0.1);
+                  transform: scale(0.1);
+          opacity: 0;
+        }
+      }
+      @keyframes scale {
+        100% {
+          -webkit-transform: scale(0.1);
+                  transform: scale(0.1);
+          opacity: 0;
+        }
+      }
+      .wrapper li:nth-child(1) {
+        z-index: 24;
+      }
+      .wrapper li:nth-child(2) {
+        z-index: 23;
+      }
+      .wrapper li:nth-child(3) {
+        z-index: 22;
+      }
+      .wrapper li:nth-child(4) {
+        z-index: 21;
+      }
+      .wrapper li:nth-child(5) {
+        z-index: 20;
+      }
+      .wrapper li:nth-child(6) {
+        z-index: 19;
+      }
+      .wrapper li:nth-child(7) {
+        z-index: 18;
+      }
+      .wrapper li:nth-child(8) {
+        z-index: 17;
+      }
+      .wrapper li:nth-child(9) {
+        z-index: 16;
+      }
+      .wrapper li:nth-child(10) {
+        z-index: 15;
+      }
+      .wrapper li:nth-child(11) {
+        z-index: 14;
+      }
+      .wrapper li:nth-child(12) {
+        z-index: 13;
+      }
+      .wrapper li:nth-child(13) {
+        z-index: 12;
+      }
+      .wrapper li:nth-child(14) {
+        z-index: 11;
+      }
+      .wrapper li:nth-child(15) {
+        z-index: 10;
+      }
+      .wrapper li:nth-child(16) {
+        z-index: 9;
+      }
+      .wrapper li:nth-child(17) {
+        z-index: 8;
+      }
+      .wrapper li:nth-child(18) {
+        z-index: 7;
+      }
+      .wrapper li:nth-child(19) {
+        z-index: 6;
+      }
+      .wrapper li:nth-child(20) {
+        z-index: 5;
+      }
+      .wrapper li:nth-child(21) {
+        z-index: 4;
+      }
+      .wrapper li:nth-child(22) {
+        z-index: 3;
+      }
+      .wrapper li:nth-child(23) {
+        z-index: 2;
+      }
+      .wrapper li:nth-child(24) {
+        z-index: 1;
+      }
+      .wrapper li:nth-child(25) {
+        z-index: 0;
+      }
+      .wrapper li:nth-child(1) {
+        -webkit-animation-delay: 0.1s;
+                animation-delay: 0.1s;
+      }
+      .wrapper li:nth-child(7) {
+        -webkit-animation-delay: 0.3s;
+                animation-delay: 0.3s;
+      }
+      .wrapper li:nth-child(13) {
+        -webkit-animation-delay: 0.5s;
+                animation-delay: 0.5s;
+      }
+      .wrapper li:nth-child(19) {
+        -webkit-animation-delay: 0.7s;
+                animation-delay: 0.7s;
+      }
+      .wrapper li:nth-child(24) {
+        -webkit-animation-delay: 0.9s;
+                animation-delay: 0.9s;
+      }
+      .wrapper li:nth-child(2) {
+        -webkit-animation-delay: 0.2s;
+                animation-delay: 0.2s;
+      }
+      .wrapper li:nth-child(8) {
+        -webkit-animation-delay: 0.4s;
+                animation-delay: 0.4s;
+      }
+      .wrapper li:nth-child(14) {
+        -webkit-animation-delay: 0.6s;
+                animation-delay: 0.6s;
+      }
+      .wrapper li:nth-child(20) {
+        -webkit-animation-delay: 0.8s;
+                animation-delay: 0.8s;
+      }
+      .wrapper li:nth-child(3) {
+        -webkit-animation-delay: 0.3s;
+                animation-delay: 0.3s;
+      }
+      .wrapper li:nth-child(9) {
+        -webkit-animation-delay: 0.5s;
+                animation-delay: 0.5s;
+      }
+      .wrapper li:nth-child(15) {
+        -webkit-animation-delay: 0.7s;
+                animation-delay: 0.7s;
+      }
+      .wrapper li:nth-child(4) {
+        -webkit-animation-delay: 0.4s;
+                animation-delay: 0.4s;
+      }
+      .wrapper li:nth-child(10) {
+        -webkit-animation-delay: 0.6s;
+                animation-delay: 0.6s;
+      }
+      .wrapper li:nth-child(5) {
+        -webkit-animation-delay: 0.5s;
+                animation-delay: 0.5s;
+      }
+      .wrapper li:nth-child(1) {
+        -webkit-animation-delay: 0.1s;
+                animation-delay: 0.1s;
+      }
+      .wrapper li:nth-child(6) {
+        -webkit-animation-delay: 0.2s;
+                animation-delay: 0.2s;
+      }
+      .wrapper li:nth-child(11) {
+        -webkit-animation-delay: 0.3s;
+                animation-delay: 0.3s;
+      }
+      .wrapper li:nth-child(16) {
+        -webkit-animation-delay: 0.4s;
+                animation-delay: 0.4s;
+      }
+      .wrapper li:nth-child(21) {
+        -webkit-animation-delay: 0.5s;
+                animation-delay: 0.5s;
+      }
+      .wrapper li:nth-child(7) {
+        -webkit-animation-delay: 0.3s;
+                animation-delay: 0.3s;
+      }
+      .wrapper li:nth-child(12) {
+        -webkit-animation-delay: 0.4s;
+                animation-delay: 0.4s;
+      }
+      .wrapper li:nth-child(17) {
+        -webkit-animation-delay: 0.5s;
+                animation-delay: 0.5s;
+      }
+      .wrapper li:nth-child(22) {
+        -webkit-animation-delay: 0.6s;
+                animation-delay: 0.6s;
+      }
+      .wrapper li:nth-child(13) {
+        -webkit-animation-delay: 0.5s;
+                animation-delay: 0.5s;
+      }
+      .wrapper li:nth-child(18) {
+        -webkit-animation-delay: 0.6s;
+                animation-delay: 0.6s;
+      }
+      .wrapper li:nth-child(23) {
+        -webkit-animation-delay: 0.7s;
+                animation-delay: 0.7s;
+      }
+      .wrapper li:nth-child(19) {
+        -webkit-animation-delay: 0.7s;
+                animation-delay: 0.7s;
+      }
+      .wrapper li:nth-child(24) {
+        -webkit-animation-delay: 0.8s;
+                animation-delay: 0.8s;
+      }
+      .wrapper li:nth-child(25) {
+        -webkit-animation-delay: 0.9s;
+                animation-delay: 0.9s;
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>Включите JavaScript, чтобы страница корректно отображалась.</noscript>
+    <div class='preloader'>
+      <div class="wrapper">
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+    </div>
+    <div id="root"></div>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('serviceWorker.js').then(function(registration) {
+            console.log('Worker registration successful', registration.scope);
+          }, function(err) {
+            console.log('Worker registration failed', err);
+          }).catch(function(err) {
+            console.log(err);
+          });
+        });
+      } else {
+        console.log('Service Worker is not supported by browser.');
+      }
+    </script>
+  </body>
+</html>

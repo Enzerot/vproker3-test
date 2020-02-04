@@ -1,0 +1,381 @@
+@import pallete
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500,700&display=swap&subset=cyrillic')
+    
+html
+    font-size: 18px
+    height: 100%
+*
+    font-family: Montserrat !important
+body
+    margin: 0
+    min-height: 100vh
+    box-sizing: border-box
+
+ul
+    margin: 0
+form
+    display: flex
+    flex-direction: column
+.container
+    max-width: 1200px
+    margin: 0 auto
+
+.MuiIconButton-root
+    padding: 5px !important
+    margin: 5px !important
+.field-name
+    display: inline-block
+    width: 230px
+    text-align: right
+    margin-right: 10px
+    font-weight: bold
+    vertical-align: top
+.field-value
+    vertical-align: bottom
+    &.description
+        color: red
+        text-decoration: underline
+.remindTo
+    color: red
+
+.MuiTypography-root.MuiPickersToolbarText-toolbarTxt.MuiPickersToolbarText-toolbarBtnSelected.MuiTypography-h4
+    font-size: 2rem
+.MuiTypography-root.MuiPickersToolbarText-toolbarTxt.MuiTypography-h3
+    font-size: 2.3rem
+
+form.create, form.edit
+    max-width: 500px
+    width: 100vw
+    margin: 30px auto 10px
+    
+    .no-margin
+        margin: 0 !important
+        &.last
+            margin-bottom: 20px !important
+    & > *
+        margin: 6px 0 !important
+    .loading-button-wrapper
+        position: relative
+        .progress
+            position: absolute
+            top: 50%
+            left: 50%
+            margin-top: -12px
+            margin-left: -12px
+    .blacklist
+        color: red
+    .debt
+        text-align: center
+        &.true
+            color: red
+    .error
+        color: red
+        font-size: 13px
+        margin-top: 0 !important
+    .ok
+        color: green
+        font-size: 13px
+        margin-top: 0 !important
+    .info-button
+        padding: 4px
+        cursor: pointer
+        opacity: .7
+        box-sizing: border-box
+    .tool-info
+        border: 1px dashed black
+        border-top: none
+        padding: 20px
+        border-bottom-left-radius: 10px
+        border-bottom-right-radius: 10px
+        margin-top: 0 !important
+        list-style-type: none
+        font-size: 13px
+    .consumables
+        display: flex
+        align-items: flex-end
+        .react-select-container
+            width: 80%
+            margin-right: 10px
+
+.deleted
+    .field-value
+        text-decoration: line-through
+
+form
+    .MuiSvgIcon-root
+        vertical-align: middle
+
+.MuiPickersBasePicker-pickerView
+    min-height: 320px !important
+
+.MuiTableCell-root
+    padding-right: 14px !important
+
+//---------------------------------------------------
+// HEADER
+//---------------------------------------------------
+#root
+    padding: 150px 0 100px
+    min-height: 100vh
+    position: relative
+    box-sizing: border-box
+    .header
+        display: flex
+        justify-content: space-between
+        align-items: center
+        background-color: $dark
+        box-shadow: 0px 0px 20px 0px rgba(0,0,0,.6)
+        position: fixed
+        top: 0
+        left: 0
+        right: 0
+        z-index: 1000
+        a 
+            text-decoration: none   
+            box-sizing: border-box
+            height: 80px
+            display: inline-flex
+            align-items: center
+            padding: 10px
+            color: white
+            transition: .1s ease-in-out
+            font-weight: bold
+            &::before
+                    content: ''
+                    position: absolute
+                    top: 65%
+                    left: 50%
+                    background-color: $secondary
+                    height: 2px
+                    width: 0
+                    z-index: 200
+                    transform: translateX(-50%)
+                    transition: .1s ease-in-out
+            &:hover
+                &::before
+                    width: 80%
+        nav
+            display: inline-flex
+            justify-content: space-between
+            align-items: center
+        .nav-ul
+            list-style: none
+            li
+                position: relative
+                display: inline-block
+                box-sizing: border-box
+                color: black
+                cursor: pointer
+                span
+                    cursor: pointer
+
+//---------------------------------------------------
+// Table
+//---------------------------------------------------
+
+.MuiPaper-root.MuiPaper-elevation2.MuiPaper-rounded
+    box-shadow: 0px 0px 22px 5px rgba(0,0,0,0.4)
+    border-radius: 7px
+    h6
+        font-weight: bold
+        font-size: 25px
+    .MuiToolbar-root.MuiToolbar-regular.MTableToolbar-root-65.MuiToolbar-gutters
+        border-top-left-radius: 5px
+        border-top-right-radius: 5px
+    .MuiTableHead-root
+        *
+            font-weight: bold
+            color: black
+    .row-detail
+        position: relative
+        ul
+            list-style-type: none
+            margin: 10px 0
+            li
+                padding: 10px 0
+        .detail-switch
+            position: absolute
+            top: 10px
+            right: 10px
+    .filter-row
+        .MuiButtonGroup-grouped:last-child
+            border-right: none
+            border-top-right-radius: 0
+            border-bottom-right-radius: 0
+        .MuiButtonGroup-grouped:first-child
+            border-left: none
+            border-top-left-radius: 0
+            border-bottom-left-radius: 0
+    
+
+//---------------------------------------------------
+// Login
+//---------------------------------------------------
+
+.login-form
+    max-width: 500px
+    margin: 0 auto
+    box-shadow: 0px 0px 50px 0px rgba(0,0,0,0.4)
+    border-radius: 5px
+    padding: 50px 50px
+    transition: .2s ease-in-out
+    input, label
+        font-family: 'Montserrat'
+    & > *
+        margin: 10px 0 !important
+
+        
+//---------------------------------------------------
+// ConfirmationDialog
+//---------------------------------------------------
+
+.confirmation-dialog
+    ul
+        list-style-type: none
+        padding-left: 0
+        li
+            margin: 10px 0
+            display: flex
+        .field-name
+            width: 145px
+    form
+        width: 280px
+        margin: 0 auto 10px
+        & > *
+            margin: 5px 0
+    .MuiTextField-root
+        display: block
+    .MuiDialogActions-root
+        span
+            font-weight: bold
+
+
+//---------------------------------------------------
+// Drawer
+//---------------------------------------------------
+
+.drawer
+    width: 400px
+    .MuiButtonBase-root.MuiListItem-root.MuiListItem-gutters.MuiListItem-button
+        padding: 0 !important
+    a
+        text-decoration: none
+        color: black
+        padding: 15px 20px
+        width: 100%
+        
+
+
+//---------------------------------------------------
+// Footer
+//---------------------------------------------------
+
+#root
+    footer
+        background-color: $dark
+        height: 60px
+        position: absolute
+        bottom: 0
+        width: 100%
+        padding: 0 30px
+        box-sizing: border-box
+        z-index: 10
+        .container
+            display: flex
+            justify-content: space-between
+            align-items: center
+            height: 100%
+            & > a
+                display: flex
+                img
+                    height: 50px
+                    width: auto
+            adress
+                color: white
+                justify-self: center
+                margin-right: 70px
+                a
+                    color: $secondary
+                    z-index: 5
+
+//---------------------------------------------------
+// Select
+//---------------------------------------------------
+#select
+    .react-select__control
+        border-radius: 0
+        border: none
+        border-bottom: 1px solid rgba(0, 0, 0, 0.42)
+        outline: none
+        transition: border-bottom-color .3s cubic-bezier(0.4, 0, 0.2, 1)
+        box-shadow: none
+        cursor: text
+        min-height: 39px
+        padding-bottom: 1px
+        &:hover, &:focus
+            border-bottom: 2px solid rgba(0, 0, 0, .87)
+            padding-bottom: 0
+    .react-select__value-container
+        padding-left: 0
+    .react-select__placeholder
+        margin-left: 0
+    .react-select__option
+        transition: .1s ease-in-out
+        cursor: pointer
+        &:hover, &:focus
+            background-color: lighten($secondaryLight, 10%)
+    .react-select__option--is-focused
+        background-color: lighten($secondaryLight, 10%)
+    .react-select__option--is-selected
+        background-color: $secondaryLight
+        color: black
+    .react-select__menu
+        box-shadow: 0px 0px 20px 0px rgba(0,0,0,.4)
+        padding: 10px 0
+
+//---------------------------------------------------
+// Adaptive
+//---------------------------------------------------
+
+@media (max-width: 1220px)
+    #root
+        padding-top: 100px
+    .MuiPaper-root.MuiPaper-elevation2.MuiPaper-rounded
+        box-shadow: none
+        border-radius: 0
+
+@media (max-width: 900px)
+    #root .header .nav-ul li a
+        font-size: 15px
+
+@media (max-width: 500px)
+    form.create, form.edit
+        width: 100%
+
+@media (max-width: 500px)
+    #root
+        footer
+            height: 100px
+            .container
+                flex-direction: column
+                justify-content: center
+                adress
+                    margin-right: 0
+
+@media (max-width: 470px)
+    .MuiPaper-root.MuiPaper-elevation2.MuiPaper-rounded
+        .MTableToolbar-root-92
+            display: block
+            padding: 0 0 30px
+        h6
+            text-align: center
+        .MuiFormControl-root.MuiTextField-root
+            padding: 0
+            width: 100%
+            box-sizing: border-box
+    .MuiToolbar-root.MuiToolbar-regular.MuiTablePagination-toolbar.Component-paginationToolbar-62.MuiToolbar-gutters
+        display: block
+        height: auto
+        .MuiInputBase-root.MuiTablePagination-input
+            width: 100%
+            padding: 10px 0

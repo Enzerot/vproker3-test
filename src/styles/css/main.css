@@ -1,0 +1,552 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:500,700&display=swap&subset=cyrillic");
+html {
+  font-size: 18px;
+  height: 100%;
+}
+
+* {
+  font-family: Montserrat !important;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+ul {
+  margin: 0;
+}
+
+form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.MuiIconButton-root {
+  padding: 5px !important;
+  margin: 5px !important;
+}
+
+.field-name {
+  display: inline-block;
+  width: 230px;
+  text-align: right;
+  margin-right: 10px;
+  font-weight: bold;
+  vertical-align: top;
+}
+
+.field-value {
+  vertical-align: bottom;
+}
+
+.field-value.description {
+  color: red;
+  text-decoration: underline;
+}
+
+.remindTo {
+  color: red;
+}
+
+.MuiTypography-root.MuiPickersToolbarText-toolbarTxt.MuiPickersToolbarText-toolbarBtnSelected.MuiTypography-h4 {
+  font-size: 2rem;
+}
+
+.MuiTypography-root.MuiPickersToolbarText-toolbarTxt.MuiTypography-h3 {
+  font-size: 2.3rem;
+}
+
+form.create, form.edit {
+  max-width: 500px;
+  width: 100vw;
+  margin: 30px auto 10px;
+}
+
+form.create .no-margin, form.edit .no-margin {
+  margin: 0 !important;
+}
+
+form.create .no-margin.last, form.edit .no-margin.last {
+  margin-bottom: 20px !important;
+}
+
+form.create > *, form.edit > * {
+  margin: 6px 0 !important;
+}
+
+form.create .loading-button-wrapper, form.edit .loading-button-wrapper {
+  position: relative;
+}
+
+form.create .loading-button-wrapper .progress, form.edit .loading-button-wrapper .progress {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -12px;
+  margin-left: -12px;
+}
+
+form.create .blacklist, form.edit .blacklist {
+  color: red;
+}
+
+form.create .debt, form.edit .debt {
+  text-align: center;
+}
+
+form.create .debt.true, form.edit .debt.true {
+  color: red;
+}
+
+form.create .error, form.edit .error {
+  color: red;
+  font-size: 13px;
+  margin-top: 0 !important;
+}
+
+form.create .ok, form.edit .ok {
+  color: green;
+  font-size: 13px;
+  margin-top: 0 !important;
+}
+
+form.create .info-button, form.edit .info-button {
+  padding: 4px;
+  cursor: pointer;
+  opacity: .7;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+form.create .tool-info, form.edit .tool-info {
+  border: 1px dashed black;
+  border-top: none;
+  padding: 20px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  margin-top: 0 !important;
+  list-style-type: none;
+  font-size: 13px;
+}
+
+form.create .consumables, form.edit .consumables {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+form.create .consumables .react-select-container, form.edit .consumables .react-select-container {
+  width: 80%;
+  margin-right: 10px;
+}
+
+.deleted .field-value {
+  text-decoration: line-through;
+}
+
+form .MuiSvgIcon-root {
+  vertical-align: middle;
+}
+
+.MuiPickersBasePicker-pickerView {
+  min-height: 320px !important;
+}
+
+.MuiTableCell-root {
+  padding-right: 14px !important;
+}
+
+#root {
+  padding: 150px 0 100px;
+  min-height: 100vh;
+  position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+#root .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #131313;
+  -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.6);
+          box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+#root .header a {
+  text-decoration: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 80px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px;
+  color: white;
+  -webkit-transition: .1s ease-in-out;
+  transition: .1s ease-in-out;
+  font-weight: bold;
+}
+
+#root .header a::before {
+  content: '';
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  background-color: #ff8300;
+  height: 2px;
+  width: 0;
+  z-index: 200;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-transition: .1s ease-in-out;
+  transition: .1s ease-in-out;
+}
+
+#root .header a:hover::before {
+  width: 80%;
+}
+
+#root .header nav {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#root .header .nav-ul {
+  list-style: none;
+}
+
+#root .header .nav-ul li {
+  position: relative;
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: black;
+  cursor: pointer;
+}
+
+#root .header .nav-ul li span {
+  cursor: pointer;
+}
+
+.MuiPaper-root.MuiPaper-elevation2.MuiPaper-rounded {
+  -webkit-box-shadow: 0px 0px 22px 5px rgba(0, 0, 0, 0.4);
+          box-shadow: 0px 0px 22px 5px rgba(0, 0, 0, 0.4);
+  border-radius: 7px;
+}
+
+.MuiPaper-root.MuiPaper-elevation2.MuiPaper-rounded h6 {
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.MuiPaper-root.MuiPaper-elevation2.MuiPaper-rounded .MuiToolbar-root.MuiToolbar-regular.MTableToolbar-root-65.MuiToolbar-gutters {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.MuiPaper-root.MuiPaper-elevation2.MuiPaper-rounded .MuiTableHead-root * {
+  font-weight: bold;
+  color: black;
+}
+
+.MuiPaper-root.MuiPaper-elevation2.MuiPaper-rounded .row-detail {
+  position: relative;
+}
+
+.MuiPaper-root.MuiPaper-elevation2.MuiPaper-rounded .row-detail ul {
+  list-style-type: none;
+  margin: 10px 0;
+}
+
+.MuiPaper-root.MuiPaper-elevation2.MuiPaper-rounded .row-detail ul li {
+  padding: 10px 0;
+}
+
+.MuiPaper-root.MuiPaper-elevation2.MuiPaper-rounded .row-detail .detail-switch {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.MuiPaper-root.MuiPaper-elevation2.MuiPaper-rounded .filter-row .MuiButtonGroup-grouped:last-child {
+  border-right: none;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.MuiPaper-root.MuiPaper-elevation2.MuiPaper-rounded .filter-row .MuiButtonGroup-grouped:first-child {
+  border-left: none;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.login-form {
+  max-width: 500px;
+  margin: 0 auto;
+  -webkit-box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.4);
+          box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+  padding: 50px 50px;
+  -webkit-transition: .2s ease-in-out;
+  transition: .2s ease-in-out;
+}
+
+.login-form input, .login-form label {
+  font-family: 'Montserrat';
+}
+
+.login-form > * {
+  margin: 10px 0 !important;
+}
+
+.confirmation-dialog ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.confirmation-dialog ul li {
+  margin: 10px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.confirmation-dialog ul .field-name {
+  width: 145px;
+}
+
+.confirmation-dialog form {
+  width: 280px;
+  margin: 0 auto 10px;
+}
+
+.confirmation-dialog form > * {
+  margin: 5px 0;
+}
+
+.confirmation-dialog .MuiTextField-root {
+  display: block;
+}
+
+.confirmation-dialog .MuiDialogActions-root span {
+  font-weight: bold;
+}
+
+.drawer {
+  width: 400px;
+}
+
+.drawer .MuiButtonBase-root.MuiListItem-root.MuiListItem-gutters.MuiListItem-button {
+  padding: 0 !important;
+}
+
+.drawer a {
+  text-decoration: none;
+  color: black;
+  padding: 15px 20px;
+  width: 100%;
+}
+
+#root footer {
+  background-color: #131313;
+  height: 60px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 0 30px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  z-index: 10;
+}
+
+#root footer .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+}
+
+#root footer .container > a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#root footer .container > a img {
+  height: 50px;
+  width: auto;
+}
+
+#root footer .container adress {
+  color: white;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  margin-right: 70px;
+}
+
+#root footer .container adress a {
+  color: #ff8300;
+  z-index: 5;
+}
+
+#select .react-select__control {
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.42);
+  outline: none;
+  -webkit-transition: border-bottom-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border-bottom-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  cursor: text;
+  min-height: 39px;
+  padding-bottom: 1px;
+}
+
+#select .react-select__control:hover, #select .react-select__control:focus {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.87);
+  padding-bottom: 0;
+}
+
+#select .react-select__value-container {
+  padding-left: 0;
+}
+
+#select .react-select__placeholder {
+  margin-left: 0;
+}
+
+#select .react-select__option {
+  -webkit-transition: .1s ease-in-out;
+  transition: .1s ease-in-out;
+  cursor: pointer;
+}
+
+#select .react-select__option:hover, #select .react-select__option:focus {
+  background-color: #ffe58e;
+}
+
+#select .react-select__option--is-focused {
+  background-color: #ffe58e;
+}
+
+#select .react-select__option--is-selected {
+  background-color: #ffd95b;
+  color: black;
+}
+
+#select .react-select__menu {
+  -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.4);
+          box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.4);
+  padding: 10px 0;
+}
+
+@media (max-width: 1220px) {
+  #root {
+    padding-top: 100px;
+  }
+  .MuiPaper-root.MuiPaper-elevation2.MuiPaper-rounded {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    border-radius: 0;
+  }
+}
+
+@media (max-width: 900px) {
+  #root .header .nav-ul li a {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 500px) {
+  form.create, form.edit {
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  #root footer {
+    height: 100px;
+  }
+  #root footer .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  #root footer .container adress {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 470px) {
+  .MuiPaper-root.MuiPaper-elevation2.MuiPaper-rounded .MTableToolbar-root-92 {
+    display: block;
+    padding: 0 0 30px;
+  }
+  .MuiPaper-root.MuiPaper-elevation2.MuiPaper-rounded h6 {
+    text-align: center;
+  }
+  .MuiPaper-root.MuiPaper-elevation2.MuiPaper-rounded .MuiFormControl-root.MuiTextField-root {
+    padding: 0;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  .MuiToolbar-root.MuiToolbar-regular.MuiTablePagination-toolbar.Component-paginationToolbar-62.MuiToolbar-gutters {
+    display: block;
+    height: auto;
+  }
+  .MuiToolbar-root.MuiToolbar-regular.MuiTablePagination-toolbar.Component-paginationToolbar-62.MuiToolbar-gutters .MuiInputBase-root.MuiTablePagination-input {
+    width: 100%;
+    padding: 10px 0;
+  }
+}
+/*# sourceMappingURL=main.css.map */
